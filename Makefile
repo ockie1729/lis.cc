@@ -1,11 +1,11 @@
-run: ./liscpp
-	./liscpp
+run: ./liscc
+	./liscc
 
 build: CMakeLists.txt lis.cc lis.h main.cc
-	g++ -o liscpp lis.cc main.cc
+	g++ -o liscc lis.cc main.cc
 
-./liscpp: CMakeLists.txt lis.cc lis.h main.cc
-	g++ -o liscpp lis.cc main.cc
+./liscc: CMakeLists.txt lis.cc lis.h main.cc
+	g++ -o liscc lis.cc main.cc
 
 test: ./build/lis_test
 	./build/lis_test
