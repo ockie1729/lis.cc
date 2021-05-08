@@ -1,17 +1,23 @@
 #include <iostream>
 #include <string>
+#include <vector>
+
 #include "./lis.h"
 
 void repl() {
-  std::cout << "hello world!!" << std::endl;
-
   while (true) {
     std::cout << "lis.cpp> ";
 
-    std::string s;
-    std::cin >> s;
+    std::string input_line;
+    std::getline(std::cin, input_line);
 
-    std::cout << s << std::endl;
+    std::vector<std::string> split_tokens = split_str(input_line);
+
+    // FIXME debug
+    std::cout << "[debug] split line:" << std::endl;
+    for (int i = 0; i < split_tokens.size(); i++) {
+      std::cout << "- " << split_tokens[i] << std::endl;
+    }
   }
 }
 
