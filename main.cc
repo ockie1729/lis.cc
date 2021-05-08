@@ -1,5 +1,5 @@
 #include <iostream>
-#include "lis.h"
+#include "./lis.h"
 
 int main() {
     repl();

@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "lis.h"
+#include "./lis.h"
 
 TEST(HelloTest, BasicAssertions) {
     EXPECT_STRNE("hello", "world");
