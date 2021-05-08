@@ -2,5 +2,5 @@
 #include "./lis.h"
 
 int main() {
-    repl();
+  repl();
 }
