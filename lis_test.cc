@@ -27,3 +27,18 @@ TEST(SplitStrTest, SplitStr2) {
     EXPECT_STREQ(expected[i].c_str(), actual[i].c_str());
   }
 }
+
+TEST(TokenizeTest, Tokenize) {
+  auto input = std::string("(- 3 4)");
+  std::vector<std::string> expected;
+  expected.push_back(std::string("("));
+  expected.push_back(std::string("-"));
+  expected.push_back(std::string("3"));
+  expected.push_back(std::string("4"));
+  expected.push_back(std::string(")"));
+  auto actual = tokenize(input);
+
+  for (std::size_t i = 0; i < expected.size(); i++) {
+    EXPECT_STREQ(expected[i].c_str(), actual[i].c_str());
+  }
+}

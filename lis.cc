@@ -61,3 +61,26 @@ std::vector<std::string> split_str(const std::string input_str) {
 
   return split_tokens;
 }
+
+
+std::string replace_str(std::string original_str,
+                           const std::string old_pattern,
+                           const std::string new_pattern) {
+  std::string::size_type pos(original_str.find(old_pattern));
+
+  while (pos != std::string::npos) {
+    original_str.replace(pos, old_pattern.length(), new_pattern);
+    pos = original_str.find(old_pattern, pos + new_pattern.length());
+  }
+
+  return original_str;
+}
+
+std::vector<std::string> tokenize(const std::string target_str) {
+  const auto s = replace_str(target_str, std::string("("), std::string(" ( "));
+  const auto replaced = replace_str(s, std::string(")"), std::string(" ) "));
+
+  const auto tokenized = split_str(replaced);
+
+  return tokenized;
+}
