@@ -11,13 +11,10 @@ void repl() {
     std::string input_line;
     std::getline(std::cin, input_line);
 
-    std::vector<std::string> split_tokens = split_str(input_line);
+    std::vector<std::string> tokens = tokenize(input_line);
+    int val = eval(tokens);
 
-    // FIXME debug
-    std::cout << "[debug] split line:" << std::endl;
-    for (int i = 0; i < split_tokens.size(); i++) {
-      std::cout << "- " << split_tokens[i] << std::endl;
-    }
+    std::cout << val << std::endl;
   }
 }
 
