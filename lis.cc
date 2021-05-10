@@ -84,3 +84,21 @@ std::vector<std::string> tokenize(const std::string target_str) {
 
   return tokenized;
 }
+
+int eval(std::vector<std::string> input_tokens) {
+  auto op = input_tokens[1];
+  auto a = input_tokens[2];
+  auto b = input_tokens[3];
+
+  if (op == "+") {
+    return std::stoi(a) + std::stoi(b);
+  } else if (op == "-") {
+    return std::stoi(a) - std::stoi(b);
+  } else if (op == "*") {
+    return std::stoi(a) * std::stoi(b);
+  } else if (op == "/") {
+    return std::stoi(a) / std::stoi(b);
+  }
+
+  return 3;
+}

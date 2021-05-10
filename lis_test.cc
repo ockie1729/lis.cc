@@ -42,3 +42,10 @@ TEST(TokenizeTest, Tokenize) {
     EXPECT_STREQ(expected[i].c_str(), actual[i].c_str());
   }
 }
+
+TEST(EvalTest, Eval) {
+  EXPECT_EQ(5, eval(tokenize("(+ 2 3)")));
+  EXPECT_EQ(4, eval(tokenize("(- 5 1)")));
+  EXPECT_EQ(5, eval(tokenize("(* 5 1)")));
+  EXPECT_EQ(2, eval(tokenize("(/ 5 2)")));
+}
